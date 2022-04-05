@@ -1,0 +1,13 @@
+//Binary to demical in Linkedlist 
+
+int getDecimalValue(ListNode* head) {
+     ListNode* temp=head;
+     int res=0;
+     
+     while(temp!=NULL){
+         res*=2;
+         res+=temp->val;
+         temp=temp->next;
+     }
+        return res;
+    }
