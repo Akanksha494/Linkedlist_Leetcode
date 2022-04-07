@@ -38,3 +38,25 @@ void deleteNode(ListNode* node) {
         node->val= node->next->val;
         node->next= node->next->next;
     }
+
+//Reverse Node in Linkedlist
+
+ListNode* reverseList(ListNode* head) {
+     if(head==NULL)
+     {
+         return NULL;
+         
+     }
+        ListNode* prev=NULL;
+        ListNode* next=NULL;
+        ListNode* temp=head;
+        
+        while(temp!=NULL)
+        {
+            next=temp->next;
+            temp->next=prev;
+            prev=temp;
+            temp=next;
+        }
+        return prev;
+    }
