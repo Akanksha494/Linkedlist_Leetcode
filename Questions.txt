@@ -102,3 +102,21 @@ ListNode* reverseList(ListNode* head) {
         
         return head->next;
     }
+
+//Intersection of two nodes in linkedlist
+
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+     while(headA!=NULL)
+     {
+         ListNode* pb=headB;
+         while(pb!=NULL)
+         {
+             if(pb==headA)
+                 return headA;
+             else
+                 pb=pb->next;
+         }
+         headA=headA->next;
+     }
+        return NULL;
+    }
