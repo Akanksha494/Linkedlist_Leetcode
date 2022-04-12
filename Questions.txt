@@ -120,3 +120,31 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
      }
         return NULL;
     }
+
+//palindrome list or not
+
+bool isPalindrome(ListNode* head) {
+      if(head==NULL)
+          return false;
+      ListNode* temp=head;
+        ListNode* prev=head;
+        stack<ListNode*> st;
+       while(temp!=NULL)
+       {
+         st.push(temp);  
+          temp=temp->next;
+       }
+        
+        while(prev!=NULL)
+        {
+            ListNode* i=st.top();
+            st.pop();
+            
+            if(prev->val!=i->val)
+               return false;
+            
+            prev=prev->next;
+        }
+        
+        return true;
+    }
