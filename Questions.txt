@@ -148,3 +148,22 @@ bool isPalindrome(ListNode* head) {
         
         return true;
     }
+
+//Linked list Cycle
+
+ bool hasCycle(ListNode *head) {
+     if(head==NULL || head->next==NULL)
+     {
+        return false;
+     }
+        unordered_map<ListNode*,int> m;
+        ListNode* temp=head;
+        while(temp!=NULL)
+        {
+            if(m[temp]==true)
+                return true;
+            m[temp]=true;
+            temp=temp->next;
+        }
+        return false;
+    }
